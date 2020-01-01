@@ -1,8 +1,8 @@
-"""
-This is the template server side for ChatBot
-"""
+
+
 from bottle import route, run, template, static_file, request
 import json
+from analyze_msg import analyze_msg
 
 
 @route('/', method='GET')
@@ -13,7 +13,7 @@ def index():
 @route("/chat", method='POST')
 def chat():
     user_message = request.POST.get('msg')
-    return json.dumps({"animation": "inlove", "msg": user_message})
+    return json.dumps(analyze_msg(user_message))
 
 
 @route("/test", method='POST')
