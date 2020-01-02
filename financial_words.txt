@@ -24,3 +24,4 @@ Demand, Depository, Depreciation, Depression, Deregulation, Designation, Devalua
 	Wage, Warrant, Wide-ranging, Withdrawal	
 	Yield
 	Zero-coupon bond
+%, $
