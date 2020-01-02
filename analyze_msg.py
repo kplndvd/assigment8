@@ -6,30 +6,8 @@ import datetime
 from swear import swear
 from financial import financial
 from bank import bank
-
-name_mentioned = ""
-
-
-def names(msg_list):
-    with open('name_list.txt', 'r') as name_list:
-        name_list = name_list.read()
-        name_list = re.sub("[^\w]", " ", name_list).split()
-    name_list = [item.replace(item, item.lower()) for item in name_list]
-
-    for word in name_list:
-        if word in msg_list:
-            global name_mentioned
-            name_mentioned = word.title()
-    result = any(word in name_list for word in msg_list)
-
-    return result
-
-
-def get_name_list_after_update():
-    name_responses = [f"Hi! {name_mentioned} fancy meeting you here", f"Welcome {name_mentioned} :) ",
-                      f"Howdy {name_mentioned} :)", f"{name_mentioned} ... I like that name",
-                      f"{name_mentioned}  What a beautiful name!"]
-    return {"animation": "excited", "msg": random.choice(name_responses)}
+from names import names, get_name_list_after_update
+from get_quote import get_quote
 
 
 def analyze_msg(msg):
@@ -51,8 +29,8 @@ def analyze_msg(msg):
     elif any(word in bank['crying_words'] for word in msg_list):
         return {"animation": "crying", "msg": random.choice(bank['crying_responses'])}
 
-    elif any(word in bank['bored_words'] for word in msg_list):
-        return {"animation": "bored", "msg": random.choice(bank['bored_responses'])}
+    elif any(word in bank['bored_words'] for word in msg_list) or "quote".lower() in msg:
+        return {"animation": "bored", "msg": random.choice(bank['bored_responses']) + get_quote()}
 
     elif any(word in bank['afraid_words'] for word in msg_list):
         return {"animation": "afraid", "msg": random.choice(bank['afraid_responses'])}
@@ -77,7 +55,7 @@ def analyze_msg(msg):
         return {"animation": "ok", "msg": now}
 
     elif swear(msg_list):
-        return {"animation": "confused", "msg": random.choice(swear_responses)}
+        return {"animation": "confused", "msg": random.choice(bank["swear_responses"])}
 
     elif names(msg_list):
         return get_name_list_after_update()
