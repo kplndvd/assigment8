@@ -8,6 +8,7 @@ from financial import financial
 from bank import bank
 from names import names, get_name_list_after_update
 from get_quote import get_quote
+from get_joke import get_joke
 
 
 def analyze_msg(msg):
@@ -21,7 +22,7 @@ def analyze_msg(msg):
         return {"animation": "heartbroke", "msg": random.choice(bank['heartbroke_responses'])}
 
     elif any(word in bank['funny_words'] for word in msg_list):
-        return {"animation": "giggling", "msg": random.choice(bank['funny_responses'])}
+        return {"animation": "giggling", "msg": get_joke()}
 
     elif any(word in bank['dog_words'] for word in msg_list):
         return {"animation": "dog", "msg": random.choice(bank['dog_responses'])}

@@ -1,4 +1,4 @@
-
+import emojis
 
 bank = {  #responses list:
     "default_responses": ["Perhaps we can discuss another topic", " I like that ", "Pretty cool", " Dance for me !",
@@ -40,7 +40,8 @@ bank = {  #responses list:
     "heartbroke_responses": ["There are many fish in the sea", "Don't worry be happy",
                              "Something good will happen soon, you'll see"],
 
-    "dog_responses": [" I love pets! I have a dog in my self as you can see", " I'm a dog type"],
+    "dog_responses": [" I love pets! I have a dog in my self as you can see", " I'm a dog type",
+                      emojis.encode(":laughing:")],
 
     # trigger list:
     'time_list': ["time", "date", "zone", "hour", "minute", "hours", "minutes", "seconds", "hr", "min", "sec"],
