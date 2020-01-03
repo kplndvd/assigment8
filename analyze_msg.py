@@ -1,14 +1,14 @@
-import re
+
+
 import random
 import datetime
-# import urllib.request
-# from joke import joke
 from swear import swear
 from financial import financial
 from bank import bank
 from names import names, get_name_list_after_update
 from get_quote import get_quote
 from get_joke import get_joke
+import emojis
 
 
 def analyze_msg(msg):
@@ -22,7 +22,7 @@ def analyze_msg(msg):
         return {"animation": "heartbroke", "msg": random.choice(bank['heartbroke_responses'])}
 
     elif any(word in bank['funny_words'] for word in msg_list):
-        return {"animation": "giggling", "msg": get_joke()}
+        return {"animation": "giggling", "msg": random.choice(bank["funny_responses"]) + get_joke()}
 
     elif any(word in bank['dog_words'] for word in msg_list):
         return {"animation": "dog", "msg": random.choice(bank['dog_responses'])}
@@ -52,7 +52,7 @@ def analyze_msg(msg):
         return {"animation": "money", "msg": random.choice(bank['financial_responses'])}
 
     elif any(word in bank['time_list'] for word in msg_list):
-        now = str(datetime.datetime.now())
+        now = str(datetime.datetime.now()) + emojis.encode(" :watch:")
         return {"animation": "ok", "msg": now}
 
     elif swear(msg_list):

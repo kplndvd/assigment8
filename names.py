@@ -1,5 +1,6 @@
 import re
 import random
+import emojis
 
 
 name_mentioned = ""
@@ -21,8 +22,10 @@ def names(msg_list):
 
 
 def get_name_list_after_update():
-    name_responses = [f"Hi! {name_mentioned} fancy meeting you here", f"Welcome {name_mentioned} :) ",
-                      f"Howdy {name_mentioned} :)", f"{name_mentioned} ... I like that name",
-                      f"{name_mentioned}  What a beautiful name!"]
+    name_responses = [f"Hi! {name_mentioned} fancy meeting you here" + emojis.encode(" :smile:"),
+                      f"Welcome {name_mentioned}  " + emojis.encode(" :smile:"),
+                      f"Howdy {name_mentioned} :)" + emojis.encode(" :smile:"),
+                      f"{name_mentioned} ... I like that name" + emojis.encode(" :smile:"),
+                      f"{name_mentioned}  What a beautiful name!" + emojis.encode(" :smile:")]
     return {"animation": "excited", "msg": random.choice(name_responses)}
 
