@@ -35,6 +35,9 @@ sparkling_heart = emojis.encode(":sparkling_heart:")
 two_hearts = emojis.encode(":two_hearts:")
 heart = emojis.encode(":heart:")
 dog = emojis.encode(":dog:")
+pizza = emojis.encode(":pizza:")
+broken_heart = emojis.encode(":broken_heart:")
+hug = emojis.encode(":hug:")
 animals = emojis.encode(":dog: :cat: :fish: :mouse: :hamster: :rabbit: :wolf: :frog: :tiger: :koala:"
                         ":bear: :cow: :boar: :monkey: :horse: :racehorse: :camel: :sheep: :elephant: :panda_face:")
 
@@ -42,7 +45,9 @@ animals = emojis.encode(":dog: :cat: :fish: :mouse: :hamster: :rabbit: :wolf: :f
 bank = {  # responses list:
     "default_responses": ["Perhaps we can discuss another topic", " I like that " + thumbsup,
                           "Pretty cool " + sunglasses, " Dance for me ! " + dancer,
-                          " Although I'm pretty smart I'm really just a chatbot" + bot, "I'm here to help" + smile],
+                          " Although I'm pretty smart I'm really just a chatbot" + bot, "I'm here to help" + smile,
+                          "I don't know about that, but I love Pizza" + pizza, "mmm..makes me wonder "
+                          ],
 
     "swear_responses": ["You should wash your mouth with some soap! " + astonished,
                         "Please use clean language" + underage,
@@ -59,17 +64,17 @@ bank = {  # responses list:
                             "If I were a rich man..la la la " + musical_score],
 
     'no_responses': ["Let's try to be positive about this " + dancer,
-                     " No ? How about YES"+heavy_exclamation_mark, "Think happy thoughts"],
+                     " No ? How about YES"+heavy_exclamation_mark, "Think happy thoughts" + smile],
 
     "takeoff_responses": ["Ask my partner Google, he will be real useful for that one! " + ok_hand,
                           "I'm not sure " + ok_woman,
                           " figures..", "Why not?", " Pretty much", "You may want to ask some people as well",
                           "Can you try to rephrase?", "I had the same question my self",
                           "I suggest we change the subject", "mm, well what do you think?",
-                          "That's a great question, you should ask google"],
+                          "That's a great question, you should ask google", "I wonder about that"],
 
     "dancing_responses": ["I think that's great! " + clap, "Wonderful", "I have to agree on that",
-                          "Yep!", "For sure!",
+                          "Yep!", "For sure!", "Excellent!"
                           "Go Go Go! " + checkered_flag],
 
     "crying_responses": ["Would a tissue help? " + gift,
@@ -94,7 +99,9 @@ bank = {  # responses list:
                          "Love is in the air " + two_hearts, heart],
 
     "heartbroke_responses": ["There are many fish in the sea" + fish, "Don't worry be happy" + smile,
-                             "broken_heart", "Something good will happen soon, you'll see" + smile],
+                             broken_heart, "Something good will happen soon, you'll see" + smile,
+                             "Please accept my virtual hug" + hug
+                             ],
 
     "dog_responses": [" I love pets! I have a dog in my self as you can see", " I'm a dog type " + dog,
                       dog, " I like many animals " + animals],
@@ -119,7 +126,8 @@ bank = {  # responses list:
 
     'inlove_words': ["love", "kiss", "kissing", "hugs", "hug", "hugging", "in love", "loving", "him", "her", "family",
                      "son", "daughter"],
-    'heartbroke_words': ["heart", "heart broken", "broke my heart"],
+    'heartbroke_words': ["heart", "heart broken", "broke my heart", "sad"],
+
     'dog_words': ["pets", "pet", "dog", "animals", "cat", "cats", "parrot", "parrots", "hamster"],
 }
 
